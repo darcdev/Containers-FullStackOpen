@@ -9,7 +9,7 @@ services:
     volumes:
       - ./todo-frontend:/usr/src/app
     ports:
-      - 3000:80
+      - 3080:80
     environment:
       - REACT_APP_BACKEND_URL=http://localhost:8080/api/
     container_name: "todo-dev-frontend-app"
@@ -54,7 +54,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 8080:80
-    container_name: reverse-proxy
+    container_name: reverse-proxy-prod
     depends_on:
       - frontend
       - server
